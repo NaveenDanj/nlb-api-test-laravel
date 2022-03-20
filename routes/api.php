@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //user auth routes
 Route::prefix('auth')->group(function () {
     Route::post('login', [UserAuthController::class , 'login']);
-    Route::post('register', 'UserAuthController@register');
+    Route::post('register', [UserAuthController::class , 'register']);
     Route::post('logout', 'UserAuthController@logout');
     Route::post('me', 'UserAuthController@me');
 });
