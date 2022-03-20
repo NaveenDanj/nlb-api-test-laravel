@@ -50,8 +50,10 @@ class UserAuthController extends Controller{
         ]);
 
 
-        return $user->createToken('default')->plainTextToken;
-
+        return response()->json([
+            'message' => 'User created successfully',
+            'token' => $user->createToken('default')->plainTextToken
+        ], 201);
 
     }
 
