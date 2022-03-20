@@ -65,5 +65,9 @@ class UserAuthController extends Controller{
         return response()->json(['message' => 'No user logged in'] , 401);
     }
 
+    public function me(Request $request){
+        return response()->json($request->user());
+    }
+
 
 }
